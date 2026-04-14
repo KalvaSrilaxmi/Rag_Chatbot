@@ -10,7 +10,7 @@ It supports local/offline inference with Ollama and can also run with OpenAI.
 
 | Category | Tool/Library | Version |
 |---|---|---|
-| Language | Python | 3.10+ recommended |
+| Language | Python | >3.11 recommended |
 | Orchestration | `langchain` | `>=0.2.0` |
 | Community Integrations | `langchain-community` | `>=0.2.0` |
 | Core Interfaces | `langchain-core` | `>=0.2.0` |
