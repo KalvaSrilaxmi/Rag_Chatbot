@@ -4,6 +4,8 @@ A professional Retrieval-Augmented Generation (RAG) application that answers use
 The system ingests files from the `data/` folder, creates embeddings, stores them in FAISS, retrieves the most relevant chunks, and generates grounded answers with source citations (filename + page).  
 It supports local/offline inference with Ollama and can also run with OpenAI.
 
+**Repository:** [KalvaSrilaxmi/Rag_Chatbot](https://github.com/KalvaSrilaxmi/Rag_Chatbot)
+
 ## Tech Stack
 
 | Category | Tool/Library | Version |
@@ -12,6 +14,7 @@ It supports local/offline inference with Ollama and can also run with OpenAI.
 | Orchestration | `langchain` | `>=0.2.0` |
 | Community Integrations | `langchain-community` | `>=0.2.0` |
 | Core Interfaces | `langchain-core` | `>=0.2.0` |
+| Text Splitting | `langchain-text-splitters` | `>=0.2.0` |
 | OpenAI Integration | `langchain-openai` | `>=0.1.0` |
 | Embeddings | `sentence-transformers` | `>=2.7.0` |
 | Vector DB | `faiss-cpu` | `>=1.9.0` |
@@ -61,9 +64,11 @@ The project follows a standard RAG pipeline:
 ### 1) Clone repository
 
 ```bash
-git clone <your-repo-url>
-cd "<your-project-folder>"
+git clone https://github.com/KalvaSrilaxmi/Rag_Chatbot.git
+cd Rag_Chatbot
 ```
+
+On macOS/Linux, use `cp` instead of `copy` when copying `.env.example` to `.env` (see step 3).
 
 ### 2) Install dependencies
 
@@ -73,11 +78,19 @@ pip install -r requirements.txt
 
 ### 3) Configure environment
 
+**Windows (PowerShell / CMD):**
+
 ```bash
 copy .env.example .env
 ```
 
-Then edit `.env` with your provider settings.
+**macOS / Linux:**
+
+```bash
+cp .env.example .env
+```
+
+Then edit `.env` with your provider settings. **Do not commit `.env`**; it is listed in `.gitignore` and must stay local.
 
 ### 4) Add documents
 
@@ -167,6 +180,7 @@ Use questions like:
 ├── main.py               # CLI chat entry point
 ├── app.py                # Streamlit app entry point
 ├── requirements.txt
+├── .gitignore
 ├── .env.example
 └── README.md
 ```
